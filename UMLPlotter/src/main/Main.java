@@ -1,3 +1,4 @@
+
 /*
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
@@ -28,7 +29,7 @@ public class Main {
 
         data.Class professor = new data.Class("Professor", person);
 
-        Member memberDollars = new Member("Dollars", "Salary");
+        Member memberDollars = new Member("Dollars", "salary");
         memberDollars.setVisibility("-");
         professor.addMember(memberDollars);
 
@@ -62,10 +63,10 @@ public class Main {
         professor.setX(100);
         professor.setY(300);
 
-        book.setX(350);
+        book.setX(400);
         book.setY(300);
 
-        student.setX(500);
+        student.setX(600);
         student.setY(300);
 
         DataVector.getInstance().add(person);
