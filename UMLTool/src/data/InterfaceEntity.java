@@ -5,6 +5,6 @@
 
 package data;
 
-public enum Visibility {
-    Public,Private,Protected,NoModifier
+public class InterfaceEntity extends Entity {
+
 }
