@@ -30,11 +30,28 @@ public class Entity {
     public void setName(String name) {
         this.name = name;
     }
+    
+    public Member getMember(String name){
+        for (Member member : members){
+            if(member.getName() == null ? name == null : member.getName().equals(name)){
+                return member;
+            }
+        }
+        return null;
+    }
 
     public List<Member> getMembers() {
         return members;
     }
 
+    public Method getMethod(String name){
+        for (Method method : methods){
+            if(method.getName() == null ? name == null : method.getName().equals(name)){
+                return method;
+            }
+        }
+        return null;
+    }
     public List<Method> getMethods() {
         return methods;
     }

@@ -33,6 +33,10 @@ public class MainWindow extends JFrame {
         actions.add(new AddInterfaceItem());
         actions.add(new AddMethodItem());
         actions.add(new AddMemberItem());
+        actions.add(new AddImplementedInterfaceItem());
+        actions.add(new DeleteEntityItem());
+        actions.add(new DeleteMemberItem());
+        actions.add(new DeleteMethodItem());
 
         //add menus to menubar
         menuBar.add(file);
