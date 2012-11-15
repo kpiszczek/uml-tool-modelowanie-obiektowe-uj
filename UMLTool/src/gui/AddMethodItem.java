@@ -15,7 +15,11 @@ import javax.swing.JMenuItem;
 public class AddMethodItem extends JMenuItem implements ActionListener {
 
 
-    private AddMethodForm form;
+    /**
+	 * 
+	 */
+	private static final long serialVersionUID = 3053556008598342924L;
+	private AddMethodForm form;
 
     public AddMethodItem() {
         super("Add new method");
@@ -23,7 +27,15 @@ public class AddMethodItem extends JMenuItem implements ActionListener {
     }
 
     public void actionPerformed(ActionEvent e) {
-        form = new AddMethodForm();
+        setForm(new AddMethodForm());
     }
+
+	public AddMethodForm getForm() {
+		return form;
+	}
+
+	public void setForm(AddMethodForm form) {
+		this.form = form;
+	}
 
 }

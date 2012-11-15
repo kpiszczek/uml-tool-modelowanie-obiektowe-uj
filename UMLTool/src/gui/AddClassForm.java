@@ -22,7 +22,11 @@ import javax.swing.JTextField;
  */
 public class AddClassForm extends JFrame implements ActionListener {
 
-    private JTextField nameField;
+    /**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+	private JTextField nameField;
     private JTextField baseClassField;
     private JButton    addButton;
     private JButton    cancelButton;

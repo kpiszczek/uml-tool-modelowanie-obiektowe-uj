@@ -24,7 +24,11 @@ import javax.swing.JCheckBox;
  * @author kuba
  */
 public class AddMethodForm  extends JFrame implements ActionListener {
-    private String[] vChoices = {"+","-","#"};
+    /**
+	 * 
+	 */
+	private static final long serialVersionUID = 8429372071218441691L;
+	private String[] vChoices = {"+","-","#"};
     private JTextField name;
     private JTextField returnType;
     private JCheckBox isStatic;

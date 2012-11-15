@@ -14,7 +14,11 @@ import javax.swing.JMenuItem;
  */
 public class AddMemberItem extends JMenuItem implements ActionListener {
 
-    private AddMemberForm form;
+    /**
+	 * 
+	 */
+	private static final long serialVersionUID = -2627810449440770801L;
+	private AddMemberForm form;
 
     public AddMemberItem() {
         super("Add new member");
@@ -22,7 +26,15 @@ public class AddMemberItem extends JMenuItem implements ActionListener {
     }
 
     public void actionPerformed(ActionEvent e) {
-        form = new AddMemberForm();
+        setForm(new AddMemberForm());
     }
+
+	public AddMemberForm getForm() {
+		return form;
+	}
+
+	public void setForm(AddMemberForm form) {
+		this.form = form;
+	}
 
 }

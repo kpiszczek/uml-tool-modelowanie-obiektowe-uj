@@ -12,6 +12,7 @@ import data.MethodArgument;
 import gui.MainWindow;
 import javax.swing.JFrame;
 
+
 /**
  *
  * @author SG0217432
@@ -102,9 +103,10 @@ public class Main {
         DataVector.getInstance().add(professor);
         DataVector.getInstance().add(student);
         DataVector.getInstance().add(book);
-
+        		
         MainWindow mainWindow = new MainWindow("UML Tool");
         mainWindow.setVisible(true);
         mainWindow.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+             
     }
 }

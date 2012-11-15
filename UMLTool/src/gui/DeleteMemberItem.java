@@ -13,7 +13,11 @@ import javax.swing.JMenuItem;
  * @author kuba
  */
 public class DeleteMemberItem extends JMenuItem implements ActionListener {
-    private DeleteMemberForm form;
+    /**
+	 * 
+	 */
+	private static final long serialVersionUID = -4975953237983970992L;
+	private DeleteMemberForm form;
 
     public DeleteMemberItem() {
         super("Delete member");
@@ -21,6 +25,14 @@ public class DeleteMemberItem extends JMenuItem implements ActionListener {
     }
 
     public void actionPerformed(ActionEvent e) {
-        form = new DeleteMemberForm();
+        setForm(new DeleteMemberForm());
     }
+
+	public DeleteMemberForm getForm() {
+		return form;
+	}
+
+	public void setForm(DeleteMemberForm form) {
+		this.form = form;
+	}
 }

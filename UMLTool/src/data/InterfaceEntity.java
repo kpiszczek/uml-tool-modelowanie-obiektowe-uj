@@ -7,4 +7,9 @@ package data;
 
 public class InterfaceEntity extends Entity {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 8201083907324699058L;
+
 }

@@ -6,10 +6,18 @@ package data;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.io.Serializable;
 
-public class Entity {
+public class Entity implements Serializable{
 
-    private String name;
+    /**
+	 * 
+	 */
+	private static final long serialVersionUID = 3173000447716240383L;
+	/**
+	 * 
+	 */
+	private String name;
     private List<Member> members;
     private List<Method> methods;
     private List<String> interfacesImplemented;

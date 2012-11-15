@@ -14,15 +14,27 @@ import javax.swing.JMenuItem;
  * @author kuba
  */
 public class AddImplementedInterfaceItem extends JMenuItem implements ActionListener{
-    private AddImplementedInterfaceForm form;
+    /**
+	 * 
+	 */
+	private static final long serialVersionUID = 3559851733180853604L;
+	private AddImplementedInterfaceForm form;
 
     AddImplementedInterfaceItem(){
-        super("Add implented interface");
+        super("Add implemented interface");
         addActionListener(this);
     }
 
     public void actionPerformed(ActionEvent e){
-        form = new AddImplementedInterfaceForm();
+        setForm(new AddImplementedInterfaceForm());
     }
+
+	public AddImplementedInterfaceForm getForm() {
+		return form;
+	}
+
+	public void setForm(AddImplementedInterfaceForm form) {
+		this.form = form;
+	}
 
 }

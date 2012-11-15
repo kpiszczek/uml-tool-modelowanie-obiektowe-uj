@@ -5,14 +5,19 @@
 package data;
 
 import tools.Point;
+import java.io.Serializable;
 
 /**
  *
  * @author SG0217432
  */
-public class Position {
+public class Position implements Serializable{
 
-    int x;
+    /**
+	 * 
+	 */
+	private static final long serialVersionUID = 5444432970693169125L;
+	int x;
     int y;
     int width;
     int height;

@@ -23,7 +23,11 @@ import javax.swing.JCheckBox;
  * @author kuba
  */
 public class AddMemberForm  extends JFrame implements ActionListener {
-    private String[] vChoices = {"+","-","#"};
+    /**
+	 * 
+	 */
+	private static final long serialVersionUID = -1516713949579135786L;
+	private String[] vChoices = {"+","-","#"};
     private JTextField name;
     private JTextField type;
     private JTextField minMax;

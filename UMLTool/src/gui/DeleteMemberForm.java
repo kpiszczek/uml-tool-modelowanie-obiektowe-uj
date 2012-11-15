@@ -21,7 +21,11 @@ import javax.swing.JComboBox;
  * @author kuba
  */
 public class DeleteMemberForm extends JFrame implements ActionListener{
-    private JComboBox members;
+    /**
+	 * 
+	 */
+	private static final long serialVersionUID = -3009676994850313762L;
+	private JComboBox members;
     private JButton deleteButton;
     private JButton cancelButton;
 

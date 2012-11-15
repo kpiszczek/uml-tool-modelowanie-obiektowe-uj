@@ -15,7 +15,11 @@ import javax.swing.JMenuItem;
  */
 public class AddClassItem extends JMenuItem implements ActionListener {
 
-    private AddClassForm form;
+    /**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+	private AddClassForm form;
 
     public AddClassItem() {
         super("Add new class");
@@ -23,6 +27,14 @@ public class AddClassItem extends JMenuItem implements ActionListener {
     }
 
     public void actionPerformed(ActionEvent e) {
-        form = new AddClassForm();
+        setForm(new AddClassForm());
     }
+
+	public AddClassForm getForm() {
+		return form;
+	}
+
+	public void setForm(AddClassForm form) {
+		this.form = form;
+	}
 }

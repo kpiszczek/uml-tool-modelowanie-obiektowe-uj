@@ -22,7 +22,11 @@ import javax.swing.*;
 public class WorkArea extends JPanel implements MouseMotionListener, Observer,
         MouseListener {
 
-    /** true if we are in drag */
+    /**
+	 * 
+	 */
+	private static final long serialVersionUID = 5215260191373859003L;
+	/** true if we are in drag */
     boolean inDrag = false;
     /** starting location of a drag */
     int startX = -1, startY = -1;

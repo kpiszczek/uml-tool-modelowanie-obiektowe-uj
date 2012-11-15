@@ -6,10 +6,15 @@ package data;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.io.Serializable;
 
-public class Method {
+public class Method implements Serializable{
 
-    private String name;
+    /**
+	 * 
+	 */
+	private static final long serialVersionUID = 1355681863024823141L;
+	private String name;
     private String returnType;
     private boolean isStatic;
     private String visibility;

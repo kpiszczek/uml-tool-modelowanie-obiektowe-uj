@@ -9,7 +9,11 @@ import javax.swing.*;
 
 public class MainWindow extends JFrame {
 
-    WorkArea workArea = null;
+    /**
+	 * 
+	 */
+	private static final long serialVersionUID = 9177504429267757115L;
+	WorkArea workArea = null;
 
     public MainWindow(String title) {
         super(title);
@@ -27,8 +31,11 @@ public class MainWindow extends JFrame {
         JMenuBar menuBar = new JMenuBar();
 
         JMenu file = new JMenu("File");
+        file.add(new SaveDiagramItem());
+        file.add(new OpenDiagramItem());
+        
         JMenu actions = new JMenu("Actions");
-
+        
         actions.add(new AddClassItem());
         actions.add(new AddInterfaceItem());
         actions.add(new AddMethodItem());

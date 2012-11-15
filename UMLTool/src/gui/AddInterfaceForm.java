@@ -18,7 +18,11 @@ import javax.swing.JTextField;
  */
 public class AddInterfaceForm extends JFrame implements ActionListener {
 
-    private JTextField nameField;
+    /**
+	 * 
+	 */
+	private static final long serialVersionUID = -4861343808413898016L;
+	private JTextField nameField;
     private JButton    addButton;
     private JButton    cancelButton;
 

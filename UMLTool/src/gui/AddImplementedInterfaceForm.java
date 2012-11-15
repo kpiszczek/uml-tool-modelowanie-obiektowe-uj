@@ -20,7 +20,11 @@ import javax.swing.JTextField;
  * @author kuba
  */
 public class AddImplementedInterfaceForm extends JFrame implements ActionListener {
-    private JTextField impInterface;
+    /**
+	 * 
+	 */
+	private static final long serialVersionUID = -3496654986744249080L;
+	private JTextField impInterface;
     private JButton addButton;
     private JButton cancelButton;
 

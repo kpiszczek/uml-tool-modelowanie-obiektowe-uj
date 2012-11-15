@@ -3,10 +3,15 @@
  * and open the template in the editor.
  */
 package data;
+import java.io.Serializable;
 
-public class Member {
+public class Member implements Serializable{
 
-    private String name;
+    /**
+	 * 
+	 */
+	private static final long serialVersionUID = 2238036234792753921L;
+	private String name;
     private String type;
     private String defaultValue;
     private boolean isStatic;

@@ -19,7 +19,11 @@ import javax.swing.JLabel;
  * @author kuba
  */
 public class DeleteEntityForm extends JFrame implements ActionListener{
-    private JButton yesButton;
+    /**
+	 * 
+	 */
+	private static final long serialVersionUID = -8680078388874930320L;
+	private JButton yesButton;
     private JButton noButton;
 
     DeleteEntityForm(){

@@ -13,7 +13,11 @@ import javax.swing.JMenuItem;
  * @author kuba
  */
 public class DeleteEntityItem extends JMenuItem implements ActionListener{
-    private DeleteEntityForm form;
+    /**
+	 * 
+	 */
+	private static final long serialVersionUID = 1000357825037073101L;
+	private DeleteEntityForm form;
 
     public DeleteEntityItem() {
         super("Delete active class/interface");
@@ -21,6 +25,14 @@ public class DeleteEntityItem extends JMenuItem implements ActionListener{
     }
 
     public void actionPerformed(ActionEvent e) {
-        form = new DeleteEntityForm();
+        setForm(new DeleteEntityForm());
     }
+
+	public DeleteEntityForm getForm() {
+		return form;
+	}
+
+	public void setForm(DeleteEntityForm form) {
+		this.form = form;
+	}
 }

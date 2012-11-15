@@ -8,10 +8,15 @@ import dataDraw.Constants;
 import java.util.ArrayList;
 import java.util.Observable;
 import java.util.Random;
+import java.io.Serializable;
 
-public final class DataVector extends Observable {
+public final class DataVector extends Observable implements Serializable{
 
-    private static volatile DataVector singleton;
+    /**
+	 * 
+	 */
+	private static final long serialVersionUID = 7062790497475420865L;
+	private static volatile DataVector singleton;
     private Entity activeEntity;
     private ArrayList<Entity> entityList;
     private DataVector() {
@@ -33,6 +38,10 @@ public final class DataVector extends Observable {
 
     public ArrayList<Entity> getEntityList() {
         return entityList;
+    }
+    
+    public void setEntityList(ArrayList<Entity> list){
+    	this.entityList = list;
     }
 
     public Entity findEntity(String name) {

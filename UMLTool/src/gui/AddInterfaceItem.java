@@ -15,7 +15,11 @@ import javax.swing.JMenuItem;
  */
 public class AddInterfaceItem extends JMenuItem implements ActionListener {
 
-    private AddInterfaceForm form;
+    /**
+	 * 
+	 */
+	private static final long serialVersionUID = 1405706354489371579L;
+	private AddInterfaceForm form;
 
     public AddInterfaceItem() {
         super("Add new interface");
@@ -23,7 +27,15 @@ public class AddInterfaceItem extends JMenuItem implements ActionListener {
     }
 
     public void actionPerformed(ActionEvent e) {
-        form = new AddInterfaceForm();
+        setForm(new AddInterfaceForm());
     }
+
+	public AddInterfaceForm getForm() {
+		return form;
+	}
+
+	public void setForm(AddInterfaceForm form) {
+		this.form = form;
+	}
 
 }
