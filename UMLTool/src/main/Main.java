@@ -6,6 +6,7 @@ package main;
 
 import data.ClassEntity;
 import data.DataVector;
+import data.InterfaceEntity;
 import data.Member;
 import data.Method;
 import data.MethodArgument;
@@ -20,7 +21,22 @@ import javax.swing.JFrame;
 public class Main {
 
     public static void main(String[] args) {
-
+    	InterfaceEntity eyes = new InterfaceEntity();
+    	eyes.setName("Eyes");
+    	eyes.addMember(new Member());
+    	eyes.getLastMember().setName("leftEye");
+    	eyes.getLastMember().setType("Organ");
+    	eyes.getLastMember().setVisibility("+");
+    	eyes.addMember(new Member());
+    	eyes.getLastMember().setName("rightEye");
+    	eyes.getLastMember().setType("Organ");
+    	eyes.getLastMember().setVisibility("+");
+    	
+    	eyes.addMethod(new Method());
+    	eyes.getLastMethod().setName("stare");
+    	eyes.getLastMethod().setVisibility("+");
+    	eyes.getLastMethod().setReturnType("Vision");
+    	
         ClassEntity person = new ClassEntity();
         person.setName("Person");
 
@@ -41,7 +57,7 @@ public class Main {
         professor.setBaseClass("Person");
 
         professor.addMember(new Member());
-        professor.getLastMember().setName("Salary");
+        professor.getLastMember().setName("salary");
         professor.getLastMember().setType("Dollars");
         professor.getLastMember().setVisibility("-");
 
@@ -55,6 +71,14 @@ public class Main {
         professor.addMethod(new Method());
         professor.getLastMethod().setName("getSalary");
         professor.getLastMethod().setReturnType("Dollars");
+        
+        professor.addMethod(new Method());
+        professor.getLastMethod().setName("teach");
+        professor.getLastMethod().setReturnType("void");
+        professor.getLastMethod().addArgument(new MethodArgument());
+        professor.getLastMethod().getLastArgument().setName("student");
+        professor.getLastMethod().getLastArgument().setType("Student");
+        professor.getLastMethod().setStatic(true);
 
         ClassEntity student = new ClassEntity();
         student.setName("Student");
@@ -62,6 +86,7 @@ public class Main {
         student.addMember(new Member());
         student.getLastMember().setName("major");
         student.getLastMember().setType("String");
+        student.addInterfaceImplemented("Eyes");
 
         ClassEntity book = new ClassEntity();
         book.setName("Book");
@@ -98,7 +123,12 @@ public class Main {
 
         student.getPosition().setX(500);
         student.getPosition().setY(300);
-
+        
+        eyes.getPosition().setX(700);
+        eyes.getPosition().setY(230);
+        
+        
+        DataVector.getInstance().add(eyes);
         DataVector.getInstance().add(person);
         DataVector.getInstance().add(professor);
         DataVector.getInstance().add(student);

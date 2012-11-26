@@ -44,10 +44,15 @@ public class MainWindow extends JFrame {
         actions.add(new DeleteEntityItem());
         actions.add(new DeleteMemberItem());
         actions.add(new DeleteMethodItem());
+        
+        JMenu generator = new JMenu("Generator");
+        
+        generator.add(new PythonGeneratorItem());
 
         //add menus to menubar
         menuBar.add(file);
         menuBar.add(actions);
+        menuBar.add(generator);
 
         setJMenuBar(menuBar);
     }

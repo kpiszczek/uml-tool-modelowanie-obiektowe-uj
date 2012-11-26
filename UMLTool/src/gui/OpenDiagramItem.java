@@ -5,7 +5,6 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.JMenuItem;
 import javax.swing.JFileChooser;
-import javax.swing.filechooser.FileNameExtensionFilter;
 
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
@@ -39,19 +38,16 @@ public class OpenDiagramItem extends JMenuItem implements ActionListener {
     }
 
     public void actionPerformed(ActionEvent e) {
-        FileNameExtensionFilter filter = new FileNameExtensionFilter(
-                "json files (*.json)","json");
         fileChooser = new JFileChooser();
-        fileChooser.setFileFilter(filter);
         int returnVal = fileChooser.showOpenDialog(OpenDiagramItem.this);
         if (returnVal == JFileChooser.APPROVE_OPTION){
         	File file = fileChooser.getSelectedFile();
         	if(file.exists()){
-                    try{
-        		file.setReadable(true);
-        		BufferedReader reader = new BufferedReader(new FileReader(file));
-        		
-        		Gson gson = new Gson();
+        		try{
+        			file.setReadable(true);
+        			BufferedReader reader = new BufferedReader(new FileReader(file));
+        			
+        			Gson gson = new Gson();
         			
         	        Type classType = new TypeToken<ArrayList<ClassEntity>>(){}.getType();
         	        Type interfaceType = new TypeToken<ArrayList<InterfaceEntity>>(){}.getType();
