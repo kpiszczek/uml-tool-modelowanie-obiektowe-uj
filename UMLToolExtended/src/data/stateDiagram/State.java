@@ -23,7 +23,7 @@ public class State implements MoveableElement {
     }
 
     public String getName() {
-        return name;
+        return name.replaceAll("\\s", "");
     }
 
     public void setName(String name) {
@@ -36,5 +36,12 @@ public class State implements MoveableElement {
 
     public void setPosition(Position position) {
         this.position = position;
-    }  
+    } 
+    
+    public String getTxtForm(){
+    	StringBuilder buf = new StringBuilder();
+        @SuppressWarnings("unused")
+		final String newLine = System.getProperty("line.separator");  
+    	return buf.toString();
+    }
 }

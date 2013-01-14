@@ -7,6 +7,7 @@ package data.classDiagram;
 import com.thoughtworks.xstream.annotations.XStreamAlias;
 import com.thoughtworks.xstream.annotations.XStreamImplicit;
 import data.stateDiagram.StateDiagram;
+//import data.stateDiagram.State;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -21,7 +22,7 @@ public class ClassEntity extends Entity {
     public ClassEntity() {
         super();
         baseClass = "";
-        stateDiagram = new StateDiagram();
+        stateDiagram = new StateDiagram(this.getName());
         triggers = new ArrayList<Trigger>();
     }
 
@@ -80,7 +81,17 @@ public class ClassEntity extends Entity {
         }
 
         buf.append("{").append(newLine).append(newLine);
-
+        
+        if (!this.stateDiagram.getStates().isEmpty()){
+        	buf.append("\tprivate StateBase state;");
+        	buf.append(newLine).append(newLine);
+        	System.out.println(this.stateDiagram.getEnterState().getName());
+        	buf.append("\tpublic ").append(this.getName()).append("(){").append(newLine);
+        	buf.append("\t\tstate = new ").append(this.stateDiagram.getEnterState().getName());
+        	buf.append("();").append(newLine);
+        	buf.append("\t}").append(newLine);
+        }
+        
         List<String> memberNames = new ArrayList<String>();
         for (Member m : getMembers()) {
             memberNames.add(m.getName());
@@ -104,8 +115,33 @@ public class ClassEntity extends Entity {
             isSetterOrGetter = false;
             buf.append(newLine);
         }
+        
+        if (!this.stateDiagram.getStates().isEmpty()){
+        	buf.append("\tpublic StateBase State{").append(newLine);
+        	buf.append("\t\tget { return state; }").append(newLine);
+        	buf.append("\t\tset { state = value; }").append(newLine);
+        	buf.append("\t}").append(newLine);
+        }
+        
+        for (Trigger t: getTriggers()){
+        	if (t.getVisibility().equalsIgnoreCase("+")){
+        		buf.append("\t").append("public");
+        	}else if (t.getVisibility().equalsIgnoreCase("-")){
+        		buf.append("\t").append("private");
+        	}else if (t.getVisibility().equalsIgnoreCase("#")){
+        		buf.append("\t").append("protected");
+        	}
+        	buf.append(" ").append(t.getName().toLowerCase()).append("(){").append(newLine);
+        	buf.append("\t\tstate.").append(t.getName().toLowerCase()).append("(this);").append(newLine);
+        	buf.append("\t}").append(newLine);
+        }
 
         buf.append("}");
+        
+        if (!this.stateDiagram.getStates().isEmpty()){
+        	buf.append(newLine).append(newLine);
+        	buf.append(this.stateDiagram.getTxtForm());
+        }
 
         return buf.toString();
     }

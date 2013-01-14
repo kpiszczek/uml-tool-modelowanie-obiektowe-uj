@@ -99,11 +99,13 @@ public class Main {
         hasStudent.setName("Has Student");
         hasStudent.getPosition().setX(100);
         hasStudent.getPosition().setY(500);
-
+        
+        book.getStateDiagram().setClassName(book.getName());
         book.getStateDiagram().addState(inPrintery);
         book.getStateDiagram().addState(inStore);
         book.getStateDiagram().addState(inLibrary);
         book.getStateDiagram().addState(hasStudent);
+        book.getStateDiagram().setEnterState(inPrintery);
 
         Trigger print = new Trigger();
         print.setVisibility("+");
